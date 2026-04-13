@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZCH4GH2PX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HZCH4GH2PX');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Метапрограмне інтерв'ю — Практичний гайд для HR</title>
@@ -1668,6 +1676,10 @@ function qzShowResult() {
 
   document.getElementById('qz-level').textContent = level;
   document.getElementById('qz-desc').innerHTML = desc;
+  // GA4 event: test completed
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'test_completed', { score: qzScore, level: level });
+  }
 }
 
 </script>
